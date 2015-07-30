@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="fill_horizontal"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/skin"
+        android:orientation="vertical" >
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/clientLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dip"
+        android:gravity="center_vertical"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="智能微波炉"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/ServerLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/clientLayout"
+        android:layout_marginTop="5dip"
+        android:orientation="vertical" >
+
+        <EditText
+            android:id="@+id/IPText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:hint="请输入IP地址" >
+
+            <requestFocus />
+        </EditText>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_below="@+id/ServerLayout"
+        android:layout_marginTop="5dip"
+        android:layout_toLeftOf="@+id/StartConnect"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/RecvText"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:text="信息：\n" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/StartConnect"
+        android:layout_width="120dp"
+        android:layout_height="60dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/relativeLayout1"
+        android:text="开始连接" />
+
+    <Button
+        android:id="@+id/recipe1"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:text="牛奶" />
+
+    <Button
+        android:id="@+id/QRScan"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="16dp"
+        android:layout_toLeftOf="@+id/recipe1"
+        android:text="扫码" />
+
+    <Button
+        android:id="@+id/recipe3"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/QRScan"
+        android:layout_below="@+id/QRScan"
+        android:layout_marginTop="16dp"
+        android:text="薯片" />
+
+    <Button
+        android:id="@+id/poweroff"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@+id/recipe3"
+        android:layout_alignBottom="@+id/recipe3"
+        android:layout_toRightOf="@+id/recipe3"
+        android:text="取消" />
+
+    <Button
+        android:id="@+id/recipe5"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@+id/poweroff"
+        android:layout_alignBottom="@+id/poweroff"
+        android:layout_toRightOf="@+id/poweroff"
+        android:text="定时开始" />
+
+    <Button
+        android:id="@+id/recipe2"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_above="@+id/recipe3"
+        android:layout_toRightOf="@+id/poweroff"
+        android:text="豆皮" />
+
+    <DigitalClock
+        android:id="@+id/digitalClock1"
+        android:layout_width="80dp"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="11dp"
+        android:layout_marginLeft="15dp"
+        android:text="DigitalClock"
+        android:textColor="#CDFF00" />
+
+    <TextView
+        android:id="@+id/QRstring"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/digitalClock1"
+        android:layout_alignBottom="@+id/digitalClock1"
+        android:layout_toLeftOf="@+id/recipe5"
+        android:text="菜品信息"
+        android:textColor="#FF0000"
+        android:textSize="24dp" />
+
+    <Button
+        android:id="@+id/t_minus"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@+id/t_plus"
+        android:layout_alignBottom="@+id/t_plus"
+        android:layout_centerHorizontal="true"
+        android:text="定时-" />
+
+    <Button
+        android:id="@+id/t_plus"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignLeft="@+id/recipe3"
+        android:layout_below="@+id/recipe3"
+        android:layout_marginTop="17dp"
+        android:text="定时+" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_alignBaseline="@+id/t_minus"
+        android:layout_alignBottom="@+id/t_minus"
+        android:layout_alignLeft="@+id/recipe5"
+        android:text="定时取消" />
+
+    <TextView
+        android:id="@+id/timecount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/QRstring"
+        android:layout_alignBottom="@+id/QRstring"
+        android:layout_alignLeft="@+id/StartConnect"
+        android:text="定时信息"
+        android:textColor="#00FF00"
+        android:textSize="24dp" />
+
+</RelativeLayout>
